@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>        
+    <add key="ProviderType" value="Provider.vultr.Processor.VultrProcessor,Provider.vultr"/>
+    <add key="vultrAPIKey" value="{REDACTED}"/>
+  </appSettings>
+</configuration>
