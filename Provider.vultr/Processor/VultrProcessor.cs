@@ -29,5 +29,24 @@ namespace Provider.vultr.Processor
                 }
             }
         }
+
+        public async Task<OperatingSystems> ListOperatingSystems()
+        {
+            string url = "https://api.vultr.com/v2/os";
+            ApiHelper.InitializeClient();
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    OperatingSystems operatingSystems = await response.Content.ReadAsAsync<OperatingSystems>();
+                    return operatingSystems;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+            
+        }
     }
 }

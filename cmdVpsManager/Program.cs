@@ -30,6 +30,12 @@ namespace cmdVpsManager
             VultrProcessor processor = (VultrProcessor) repository;
             AccountWrapper wrapper = processor.GetAccount().GetAwaiter().GetResult();
             Console.WriteLine(wrapper.Account.Email);
+            OperatingSystems operatingSystems = processor.ListOperatingSystems().GetAwaiter().GetResult();
+            Console.WriteLine(operatingSystems.Os.Count);
+            for (int i = 0; i < operatingSystems.Os.Count; i++)
+            {
+                Console.WriteLine(operatingSystems.Os[i].name);
+            }
         }
     }
 }
