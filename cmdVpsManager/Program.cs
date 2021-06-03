@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using CommandLine;
 using Provider.vultr.Processor;
 using ProviderRepository.Factory;
 using ProviderRepository.Interface;
@@ -10,13 +12,24 @@ namespace cmdVpsManager
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
+        {
+            Parser.Default.ParseArguments<CommandLineOptions>(args)
+                .WithParsed(options => RunOptions(options))
+                .WithNotParsed((error) => HandleParseError(error));
+        }
+
+        private static void HandleParseError(IEnumerable<Error> error)
+        {
+            Console.WriteLine("Command Line parameters were not correct");
+        }
+
+        private static void RunOptions(CommandLineOptions options)
         {
             IProviderRepository repository = RepositoryFactory.GetProvider();
             VultrProcessor processor = (VultrProcessor) repository;
             AccountWrapper wrapper = processor.GetAccount().GetAwaiter().GetResult();
-            Console.WriteLine("done");
-            
+            Console.WriteLine(wrapper.Account.Email);
         }
     }
 }
