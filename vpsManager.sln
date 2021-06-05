@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProviderRepository.Factory"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProviderRepository.Interface", "ProviderRepository.Interface\ProviderRepository.Interface.csproj", "{0CF86953-8AAC-4CBA-A047-4C513BA9F8AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Provider.digitalOcean", "Provider.digitalOcean\Provider.digitalOcean.csproj", "{99ECD2EF-B645-4C45-8C0D-5FD0996C2091}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{0CF86953-8AAC-4CBA-A047-4C513BA9F8AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CF86953-8AAC-4CBA-A047-4C513BA9F8AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CF86953-8AAC-4CBA-A047-4C513BA9F8AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99ECD2EF-B645-4C45-8C0D-5FD0996C2091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99ECD2EF-B645-4C45-8C0D-5FD0996C2091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99ECD2EF-B645-4C45-8C0D-5FD0996C2091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99ECD2EF-B645-4C45-8C0D-5FD0996C2091}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
